@@ -7,6 +7,7 @@ namespace Controller
 {
     public class BrickController : MonoBehaviour
     {
+        public AudioSource _damageAudio;
         private BrickModel _brickModel; 
 
         public void Start()
@@ -16,6 +17,7 @@ namespace Controller
 
         public void Damage(int damage)
         {
+            _damageAudio.Play();
             _brickModel.Damage(damage);
         }
     }

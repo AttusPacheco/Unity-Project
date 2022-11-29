@@ -9,6 +9,7 @@ namespace Controller
     {
         private Rigidbody2D _rigidbody;
         private BallModel _ballModel; 
+        public AudioSource _hitAudio;
 
         public void Start()
         {
@@ -39,6 +40,8 @@ namespace Controller
             AngleChange(
                 new Vector2(Mathf.Cos(angleRad), Mathf.Sin(angleRad))
             );
+
+            _hitAudio.Play();
         }
 
         private void AngleChange(Vector2 vector2)
@@ -46,6 +49,10 @@ namespace Controller
             _ballModel.Direction = vector2;
             _rigidbody.velocity = _ballModel.Direction * _ballModel.Speed * _ballModel.Power;
 
+        }
+
+        public void SpeedUp(){
+            _ballModel.Speed = _ballModel.Speed * 1.01f;
         }
     }
 }

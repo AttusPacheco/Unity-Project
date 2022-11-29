@@ -9,7 +9,7 @@ namespace Model
         [Range(0,5)]
         [SerializeField] private float _power;
 
-        [Range(0,10)]
+        [Range(0,30)]
         [SerializeField] private float _speed;
 
         [Space(10)]
